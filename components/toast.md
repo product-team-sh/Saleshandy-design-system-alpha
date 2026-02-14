@@ -52,7 +52,7 @@ The Toast Message component displays brief, non-blocking feedback notifications 
 
 | Property | Value |
 |----------|-------|
-| Position | Mid-center at the bottom of the page with 24px of padding from bottom |
+| Position | Mid-center at bottom with 24px bottom padding |
 | Auto-dismiss | 5000ms (default) |
 | Loading variant | Persists until operation completes |
 | Stacking | Multiple toasts stack vertically with 8px gap |
