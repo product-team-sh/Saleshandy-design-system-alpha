@@ -27,7 +27,7 @@ You are working inside the Saleshandy design system. Before creating, modifying,
 ### Components
 - **NEVER invent components** — only use what's documented in `components/`
 - If a component isn't documented, flag it before proceeding
-- 18 documented components: Button, Input, Card, Checkbox, Toggle, Dropdown, Tooltip, Toast, Labels/Badges/Tags, Spinner, Skeleton, Divider, Progress Bar, Avatar, Icon, Text Area, Banner, Global Header
+- **23 documented components:** Button, Input, Card, Checkbox, Toggle, Dropdown, Tooltip, Toast, Labels/Badges/Tags, Spinner, Skeleton, Divider, Progress Bar, Avatar, Icon, Text Area, Banner, Global Header, **Table, Modal, Tabs, Radio, Editor** (★ new)
 
 ### UX Copy
 - **Active voice** — "We sent your email" not "Your email has been sent"
@@ -51,6 +51,32 @@ You are working inside the Saleshandy design system. Before creating, modifying,
 - The GitHub codebase uses Ant Design colors (legacy). Figma uses Tailwind (correct)
 - A partial migration exists in GitHub but is incomplete
 
+## Automation Tools
+
+This repo includes automation scripts to accelerate component library development:
+
+### Token Pipeline (`scripts/generate-tokens.ts`)
+- **Input:** `tokens.json`
+- **Output:** CSS variables, Tailwind preset, TypeScript token exports
+- **Run:** `tsx scripts/generate-tokens.ts`
+- **When:** After modifying tokens, before creating component library repo
+
+### Component Scaffolder (`scripts/scaffold-component.ts`)
+- **Usage:** `tsx scripts/scaffold-component.ts <component-name>`
+- **Output:** 6 boilerplate files (types, variants, component, stories, tests, index)
+- **Saves:** ~70% of initial typing per component
+
+### Custom Hooks (`hooks/`)
+- 6 React 16.8+ compatible hooks (replace Radix UI primitives)
+- `use-focus-trap`, `use-click-outside`, `use-keyboard-nav`, `use-controllable-state`, `use-merged-refs`, `use-portal`
+- See `hooks/README.md` for usage
+
+### Utilities (`utils/`)
+- `cn` — Tailwind class merging (clsx + tailwind-merge)
+- `polymorphic` — Type-safe "as" prop for components
+- `keyboard` — Keyboard event constants and helpers
+- See `utils/README.md` for usage
+
 ## File Quick Reference
 | Need | File |
 |------|------|
@@ -61,3 +87,7 @@ You are working inside the Saleshandy design system. Before creating, modifying,
 | Page layout & grid | `patterns/layouts.md` |
 | Form patterns | `patterns/forms.md` |
 | Figma vs Code gaps | `deviation-report.md` |
+| Token generation script | `scripts/generate-tokens.ts` |
+| Component scaffolding script | `scripts/scaffold-component.ts` |
+| Custom hooks (React 16.8+) | `hooks/` |
+| Utilities (cn, keyboard, etc.) | `utils/` |

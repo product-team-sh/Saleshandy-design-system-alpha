@@ -27,6 +27,7 @@ This design system ensures that:
 ```
 /design-system/
 ├── README.md                    # This file
+├── CLAUDE.md                    # Instructions for Claude Code
 ├── CONTRIBUTING.md              # Guidelines for extending the system
 ├── tokens.json                  # Design tokens (colors, spacing, typography, shadows, etc.)
 ├── deviation-report.md          # Figma vs GitHub code differences
@@ -54,6 +55,25 @@ This design system ensures that:
 │   ├── interactions.md          # Hover, focus, active, disabled, error states
 │   ├── layouts.md               # Page layouts, grid, drawer, modal, spacing
 │   └── forms.md                 # Form patterns, validation, field types
+├── scripts/                     # ★ NEW: Automation scripts
+│   ├── README.md                # Script documentation
+│   ├── generate-tokens.ts       # Token pipeline (tokens.json → CSS + Tailwind + TS)
+│   └── scaffold-component.ts    # Component scaffolder (generates 6 files)
+├── hooks/                       # ★ NEW: React 16.8+ custom hooks
+│   ├── README.md                # Hook documentation
+│   ├── use-focus-trap.ts        # Focus trapping for modals
+│   ├── use-click-outside.ts     # Click outside detection
+│   ├── use-keyboard-nav.ts      # Arrow key navigation
+│   ├── use-controllable-state.ts # Controlled/uncontrolled pattern
+│   ├── use-merged-refs.ts       # Ref composition
+│   ├── use-portal.ts            # Portal rendering
+│   └── index.ts                 # Barrel export
+├── utils/                       # ★ NEW: Utility functions
+│   ├── README.md                # Utility documentation
+│   ├── cn.ts                    # Class name merging (clsx + tailwind-merge)
+│   ├── polymorphic.ts           # Polymorphic component types
+│   ├── keyboard.ts              # Keyboard event helpers
+│   └── index.ts                 # Barrel export
 └── templates/                   # Component template reference
     └── README.md
 ```
@@ -103,7 +123,93 @@ This design system ensures that:
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on adding or updating components.
 
+## Automation Tools (NEW)
+
+This repo now includes automation scripts to accelerate component library development:
+
+### 1. Token Pipeline (`scripts/generate-tokens.ts`)
+
+Generates design tokens from `tokens.json` into multiple formats:
+- `tokens.css` — CSS custom properties (--sh-* variables)
+- `semantic-tokens.css` — Purpose-driven aliases
+- `tailwind.preset.ts` — Tailwind CSS configuration preset
+- `index.ts` — Programmatic TypeScript token access
+
+**Usage:**
+```bash
+tsx scripts/generate-tokens.ts
+```
+
+### 2. Component Scaffolder (`scripts/scaffold-component.ts`)
+
+Generates boilerplate for a new component (6 files):
+- `component.tsx` — Component implementation
+- `component.variants.ts` — CVA variant definitions
+- `component.types.ts` — TypeScript interfaces
+- `component.stories.tsx` — Storybook stories
+- `component.test.tsx` — Vitest unit tests
+- `index.ts` — Barrel export
+
+**Usage:**
+```bash
+tsx scripts/scaffold-component.ts button
+tsx scripts/scaffold-component.ts input
+tsx scripts/scaffold-component.ts modal
+```
+
+### 3. Custom Hooks (React 16.8+ Compatible)
+
+6 custom hooks that replace Radix UI primitives for React 16.8+ compatibility:
+- `useFocusTrap` — Focus trapping for modals/dropdowns
+- `useClickOutside` — Click outside detection
+- `useKeyboardNav` — Arrow key navigation for lists
+- `useControllableState` — Controlled/uncontrolled pattern
+- `useMergedRefs` — Ref composition
+- `usePortal` — Portal rendering
+
+See [hooks/README.md](./hooks/README.md) for usage.
+
+### 4. Utilities
+
+- `cn` — Tailwind class merging (clsx + tailwind-merge)
+- `polymorphic` — Type-safe "as" prop for components
+- `keyboard` — Keyboard event constants and helpers
+
+See [utils/README.md](./utils/README.md) for usage.
+
+---
+
+## Building the Component Library
+
+With the automation tools in place, here's the workflow:
+
+1. **Generate tokens:**
+   ```bash
+   tsx scripts/generate-tokens.ts
+   ```
+
+2. **Scaffold components:**
+   ```bash
+   tsx scripts/scaffold-component.ts button
+   tsx scripts/scaffold-component.ts input
+   # ... repeat for all 26 components
+   ```
+
+3. **Implement each component:**
+   - Read the component's `.md` spec
+   - Update `.variants.ts` with CVA definitions from the spec
+   - Update `.types.ts` with component-specific props
+   - Implement logic in `.tsx`
+   - Add stories in `.stories.tsx`
+   - Add tests in `.test.tsx`
+
+4. **Port to new repo:**
+   - Copy `scripts/`, `hooks/`, `utils/` to the new `@saleshandy/ui` repo
+   - Copy all implemented components
+   - Set up Vite, Tailwind, Storybook, Vitest
+
+---
+
 ## Questions?
 
 If you need a component that's not documented here, flag it before proceeding.
-# Saleshandy-design-system-alpha
