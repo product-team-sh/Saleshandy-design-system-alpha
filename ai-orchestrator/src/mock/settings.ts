@@ -1,0 +1,146 @@
+import type { GlobalDefaults, MailboxWarmup, ChannelAccount, Integration } from '@/types/settings';
+
+export const mockGlobalDefaults: GlobalDefaults = {
+  sendingSchedule: {
+    timezone: 'prospect_local',
+    startHour: 9,
+    endHour: 17,
+    activeDays: [1, 2, 3, 4, 5],
+  },
+  followUpCadenceDays: 3,
+  dailyEmailLimit: 50,
+  tone: 'friendly',
+  bookingMode: 'auto',
+  blacklistDomains: [],
+  escalationChannels: ['in_app', 'slack'],
+};
+
+export const mockMailboxes: MailboxWarmup[] = [
+  {
+    id: 'mb-001',
+    email: 'alex@saleshandy-outreach.com',
+    provider: 'google',
+    warmupEnabled: true,
+    currentDailyVolume: 50,
+    targetDailyVolume: 50,
+    warmupPercent: 100,
+    status: 'ready',
+    healthScore: 94,
+  },
+  {
+    id: 'mb-002',
+    email: 'alex@sh-reach.io',
+    provider: 'google',
+    warmupEnabled: true,
+    currentDailyVolume: 50,
+    targetDailyVolume: 50,
+    warmupPercent: 100,
+    status: 'ready',
+    healthScore: 91,
+  },
+  {
+    id: 'mb-003',
+    email: 'hello@saleshandy-outreach.com',
+    provider: 'outlook',
+    warmupEnabled: true,
+    currentDailyVolume: 22,
+    targetDailyVolume: 50,
+    warmupPercent: 44,
+    status: 'warming',
+    healthScore: 78,
+    daysRemaining: 8,
+  },
+  {
+    id: 'mb-004',
+    email: 'sales@sh-reach.io',
+    provider: 'outlook',
+    warmupEnabled: false,
+    currentDailyVolume: 0,
+    targetDailyVolume: 50,
+    warmupPercent: 12,
+    status: 'error',
+    healthScore: 31,
+  },
+];
+
+export const mockChannelAccounts: ChannelAccount[] = [
+  {
+    id: 'ca-001',
+    type: 'linkedin',
+    identifier: 'linkedin.com/in/alexsaleshan',
+    connected: true,
+    dailyLimit: 25,
+  },
+  {
+    id: 'ca-002',
+    type: 'phone',
+    identifier: '+1-415-555-0200',
+    connected: true,
+    dailyLimit: 30,
+  },
+  {
+    id: 'ca-003',
+    type: 'whatsapp',
+    identifier: '+1-415-555-0201',
+    connected: false,
+    dailyLimit: 20,
+  },
+  {
+    id: 'ca-004',
+    type: 'sms',
+    identifier: '+1-415-555-0202',
+    connected: false,
+    dailyLimit: 15,
+  },
+];
+
+export const mockIntegrations: Integration[] = [
+  {
+    id: 'int-001',
+    name: 'Slack',
+    type: 'slack',
+    connected: true,
+    lastSyncAt: '2026-03-03T08:00:00Z',
+    description: 'Get escalation alerts and daily digests in Slack.',
+  },
+  {
+    id: 'int-002',
+    name: 'HubSpot',
+    type: 'hubspot',
+    connected: true,
+    lastSyncAt: '2026-03-03T06:00:00Z',
+    description: 'Sync contacts, log activity, and create deals automatically.',
+  },
+  {
+    id: 'int-003',
+    name: 'Salesforce',
+    type: 'salesforce',
+    connected: false,
+    lastSyncAt: null,
+    description: 'Bidirectional sync with your Salesforce CRM.',
+  },
+  {
+    id: 'int-004',
+    name: 'Pipedrive',
+    type: 'pipedrive',
+    connected: false,
+    lastSyncAt: null,
+    description: 'Log outreach activity and deals in Pipedrive.',
+  },
+  {
+    id: 'int-005',
+    name: 'Google Calendar',
+    type: 'google_calendar',
+    connected: true,
+    lastSyncAt: '2026-03-03T07:30:00Z',
+    description: 'AI books meetings directly on your calendar.',
+  },
+  {
+    id: 'int-006',
+    name: 'Outlook Calendar',
+    type: 'outlook_calendar',
+    connected: false,
+    lastSyncAt: null,
+    description: 'Use your Microsoft calendar for meeting scheduling.',
+  },
+];

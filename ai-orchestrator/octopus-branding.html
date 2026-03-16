@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outbound Octopus — Brand & Experience Guidelines</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* ─── Core Palette ─── */
+    --ocean-900: #0A1628;
+    --ocean-800: #0F2140;
+    --ocean-700: #142D58;
+    --ocean-600: #1A3A6E;
+    --ocean-500: #2563EB;
+    --ocean-400: #4A8AF4;
+    --ocean-300: #7CB0FF;
+    --ocean-200: #B8D4FF;
+    --ocean-100: #DBEAFE;
+    --ocean-50: #EFF6FF;
+    
+    /* ─── Calm Neutrals ─── */
+    --sand-900: #1C1917;
+    --sand-800: #292524;
+    --sand-700: #44403C;
+    --sand-600: #57534E;
+    --sand-500: #78716C;
+    --sand-400: #A8A29E;
+    --sand-300: #D6D3D1;
+    --sand-200: #E7E5E4;
+    --sand-100: #F5F5F4;
+    --sand-50: #FAFAF9;
+    
+    /* ─── Accents ─── */
+    --coral: #F97066;
+    --coral-soft: #FEE4E2;
+    --mint: #3CCBA0;
+    --mint-soft: #D1FAE5;
+    --amber: #F59E0B;
+    --amber-soft: #FEF3C7;
+    --lavender: #8B5CF6;
+    --lavender-soft: #EDE9FE;
+    
+    /* ─── Functional ─── */
+    --success: #10B981;
+    --success-bg: #ECFDF5;
+    --warning: #F59E0B;
+    --warning-bg: #FFFBEB;
+    --error: #EF4444;
+    --error-bg: #FEF2F2;
+    --info: var(--ocean-500);
+    --info-bg: var(--ocean-50);
+    
+    /* ─── Surfaces ─── */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: var(--sand-50);
+    --bg-tertiary: var(--ocean-50);
+    --bg-chat: #FAFBFD;
+    --bg-sidebar: var(--ocean-900);
+    
+    /* ─── Typography ─── */
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'DM Sans', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* ─── Spacing ─── */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+    --space-4xl: 96px;
+    
+    /* ─── Radius ─── */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+    
+    /* ─── Shadows ─── */
+    --shadow-xs: 0 1px 2px rgba(10, 22, 40, 0.04);
+    --shadow-sm: 0 2px 8px rgba(10, 22, 40, 0.06);
+    --shadow-md: 0 4px 16px rgba(10, 22, 40, 0.08);
+    --shadow-lg: 0 8px 32px rgba(10, 22, 40, 0.10);
+    --shadow-xl: 0 16px 48px rgba(10, 22, 40, 0.12);
+    --shadow-glow: 0 0 24px rgba(37, 99, 235, 0.15);
+    
+    /* ─── Transitions ─── */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --duration-fast: 150ms;
+    --duration-normal: 250ms;
+    --duration-slow: 400ms;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: var(--font-body);
+    color: var(--sand-800);
+    background: var(--sand-50);
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* ─── Layout ─── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 var(--space-xl); }
+  
+  /* ─── Cover ─── */
+  .cover {
+    background: linear-gradient(160deg, var(--ocean-900) 0%, var(--ocean-700) 40%, var(--ocean-500) 100%);
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(76, 140, 255, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(60, 203, 160, 0.1) 0%, transparent 50%);
+  }
+  .cover-content { position: relative; z-index: 1; }
+  .cover h1 {
+    font-family: var(--font-display);
+    font-size: 56px;
+    color: white;
+    letter-spacing: -0.5px;
+    margin-bottom: var(--space-md);
+    line-height: 1.1;
+  }
+  .cover .subtitle {
+    font-size: 20px;
+    color: var(--ocean-200);
+    font-weight: 300;
+    letter-spacing: 0.3px;
+  }
+  .cover .version {
+    display: inline-block;
+    margin-top: var(--space-lg);
+    padding: 6px 16px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius-full);
+    color: var(--ocean-200);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  
+  /* ─── Section ─── */
+  .section {
+    padding: var(--space-4xl) 0;
+    border-bottom: 1px solid var(--sand-200);
+  }
+  .section:last-child { border-bottom: none; }
+  .section-number {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--ocean-400);
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+  }
+  .section h2 {
+    font-family: var(--font-display);
+    font-size: 36px;
+    color: var(--ocean-900);
+    margin-bottom: var(--space-lg);
+    line-height: 1.2;
+  }
+  .section h3 {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ocean-800);
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+  }
+  .section p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--sand-600);
+    max-width: 680px;
+    margin-bottom: var(--space-md);
+  }
+  
+  /* ─── Color Swatches ─── */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-xl) 0;
+  }
+  .swatch {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    background: white;
+  }
+  .swatch-color {
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+    padding: var(--space-sm);
+  }
+  .swatch-info {
+    padding: var(--space-sm) var(--space-md);
+  }
+  .swatch-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--sand-800);
+  }
+  .swatch-value {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--sand-500);
+  }
+  
+  /* ─── Token Rows ─── */
+  .token-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 1px;
+    background: var(--sand-200);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin: var(--space-lg) 0;
+  }
+  .token-label {
+    background: var(--sand-100);
+    padding: var(--space-md);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--sand-700);
+  }
+  .token-value {
+    background: white;
+    padding: var(--space-md);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--sand-600);
+  }
+  
+  /* ─── Typography Specimens ─── */
+  .type-specimen {
+    padding: var(--space-2xl);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin: var(--space-lg) 0;
+  }
+  .type-specimen .label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ocean-400);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+  }
+  
+  /* ─── Component Previews ─── */
+  .preview-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    margin: var(--space-xl) 0;
+  }
+  .preview-header {
+    padding: var(--space-md) var(--space-lg);
+    background: var(--sand-100);
+    border-bottom: 1px solid var(--sand-200);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--sand-500);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .preview-body {
+    padding: var(--space-2xl);
+  }
+  
+  /* ─── Chat Preview ─── */
+  .chat-container {
+    background: var(--bg-chat);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    max-width: 560px;
+  }
+  .chat-msg {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+  .chat-msg.ai { flex-direction: row; }
+  .chat-msg.user { flex-direction: row-reverse; }
+  .chat-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .chat-msg.ai .chat-avatar {
+    background: linear-gradient(135deg, var(--ocean-500), var(--mint));
+    color: white;
+  }
+  .chat-msg.user .chat-avatar {
+    background: var(--sand-200);
+    color: var(--sand-600);
+  }
+  .chat-bubble {
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-lg);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 400px;
+  }
+  .chat-msg.ai .chat-bubble {
+    background: white;
+    color: var(--sand-700);
+    border: 1px solid var(--sand-200);
+    border-top-left-radius: var(--space-xs);
+  }
+  .chat-msg.user .chat-bubble {
+    background: var(--ocean-500);
+    color: white;
+    border-top-right-radius: var(--space-xs);
+  }
+  .chat-typing {
+    display: flex;
+    gap: 4px;
+    padding: var(--space-md) var(--space-lg);
+    background: white;
+    border: 1px solid var(--sand-200);
+    border-radius: var(--radius-lg);
+    border-top-left-radius: var(--space-xs);
+    width: fit-content;
+  }
+  .chat-typing span {
+    width: 6px;
+    height: 6px;
+    background: var(--sand-300);
+    border-radius: 50%;
+    animation: typing 1.4s infinite;
+  }
+  .chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+  .chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes typing {
+    0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+    30% { opacity: 1; transform: translateY(-4px); }
+  }
+  
+  /* ─── Button Previews ─── */
+  .btn-row {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    align-items: center;
+    margin: var(--space-md) 0;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-out);
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: var(--ocean-500);
+    color: white;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  }
+  .btn-primary:hover {
+    background: var(--ocean-600);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    background: white;
+    color: var(--ocean-700);
+    border: 1px solid var(--sand-300);
+    box-shadow: var(--shadow-xs);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ocean-500);
+    padding: 10px 12px;
+  }
+  .btn-success {
+    background: var(--success);
+    color: white;
+  }
+  .btn-danger {
+    background: white;
+    color: var(--error);
+    border: 1px solid var(--sand-300);
+  }
+  
+  /* ─── Status Indicators ─── */
+  .status-row {
+    display: flex;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+    margin: var(--space-lg) 0;
+  }
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .status-pill::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+  .status-pill.active { background: var(--success-bg); color: #065F46; }
+  .status-pill.active::before { background: var(--success); }
+  .status-pill.warming { background: var(--warning-bg); color: #92400E; }
+  .status-pill.warming::before { background: var(--warning); animation: pulse-dot 2s infinite; }
+  .status-pill.paused { background: var(--sand-100); color: var(--sand-600); }
+  .status-pill.paused::before { background: var(--sand-400); }
+  .status-pill.escalated { background: var(--coral-soft); color: #991B1B; }
+  .status-pill.escalated::before { background: var(--coral); }
+  .status-pill.meeting { background: var(--lavender-soft); color: #5B21B6; }
+  .status-pill.meeting::before { background: var(--lavender); }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  
+  /* ─── Callout ─── */
+  .callout {
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    border-left: 4px solid;
+    margin: var(--space-lg) 0;
+  }
+  .callout.principle { background: var(--ocean-50); border-color: var(--ocean-500); }
+  .callout.warning { background: var(--warning-bg); border-color: var(--warning); }
+  .callout.do { background: var(--success-bg); border-color: var(--success); }
+  .callout.dont { background: var(--error-bg); border-color: var(--error); }
+  .callout strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: var(--space-xs);
+    color: var(--sand-800);
+  }
+  .callout p { font-size: 14px; margin: 0; color: var(--sand-600); max-width: none; }
+  
+  /* ─── Notification Previews ─── */
+  .notif {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background: white;
+    border: 1px solid var(--sand-200);
+    border-radius: var(--radius-md);
+    margin: var(--space-sm) 0;
+    max-width: 480px;
+  }
+  .notif-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .notif-icon.celebration { background: var(--lavender-soft); }
+  .notif-icon.alert { background: var(--warning-bg); }
+  .notif-icon.escalation { background: var(--coral-soft); }
+  .notif-title { font-size: 14px; font-weight: 600; color: var(--sand-800); }
+  .notif-body { font-size: 13px; color: var(--sand-500); margin-top: 2px; }
+  .notif-time { font-size: 12px; color: var(--sand-400); margin-top: 4px; }
+  
+  /* ─── Progress Bar ─── */
+  .progress-bar {
+    height: 8px;
+    background: var(--sand-200);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin: var(--space-sm) 0;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: width 1s var(--ease-out);
+  }
+  .progress-fill.healthy { background: linear-gradient(90deg, var(--ocean-400), var(--mint)); }
+  .progress-fill.warming { background: linear-gradient(90deg, var(--amber), var(--ocean-400)); }
+  
+  /* ─── Do/Don't Grid ─── */
+  .do-dont-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+  }
+  @media (max-width: 640px) { .do-dont-grid { grid-template-columns: 1fr; } }
+  
+  /* ─── Spacing Demo ─── */
+  .spacing-demo {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-end;
+    margin: var(--space-lg) 0;
+  }
+  .spacing-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+  .spacing-visual {
+    background: var(--ocean-100);
+    border: 1px dashed var(--ocean-300);
+    border-radius: 3px;
+    width: 48px;
+  }
+  .spacing-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--sand-500);
+  }
+
+  /* ─── Animation Classes ─── */
+  .animate-gentle-float {
+    animation: gentle-float 6s ease-in-out infinite;
+  }
+  @keyframes gentle-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  
+  /* ─── Gradient text ─── */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--ocean-400), var(--mint));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ─── Emotion Scale ─── */
+  .emotion-scale {
+    display: flex;
+    gap: 2px;
+    margin: var(--space-lg) 0;
+  }
+  .emotion-bar {
+    flex: 1;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  /* ─── Card Grid ─── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+  }
+  .guide-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--sand-200);
+  }
+  .guide-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ocean-800);
+    margin-bottom: var(--space-sm);
+  }
+  .guide-card p {
+    font-size: 14px;
+    color: var(--sand-500);
+    max-width: none;
+  }
+  .guide-card .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: var(--space-md);
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- COVER -->
+<!-- ════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-content">
+    <h1>Outbound Octopus</h1>
+    <div class="subtitle">Brand & Experience Guidelines</div>
+    <div class="version">March 2026 &mdash; v1.0</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 1. BRAND ESSENCE -->
+<!-- ════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-number">01</div>
+  <h2>Brand Essence</h2>
+  <p>Outbound Octopus is an AI-powered sales companion that reaches across multiple channels simultaneously, with one intelligent brain coordinating every arm. The brand embodies <strong>calm intelligence</strong> — powerful but never aggressive, always working but never frantic.</p>
+  
+  <h3>Brand Personality</h3>
+  <div class="card-grid">
+    <div class="guide-card">
+      <div class="icon" style="background: var(--ocean-50); color: var(--ocean-500);">🧠</div>
+      <h4>Intelligent, Not Robotic</h4>
+      <p>The AI narrates its decisions in human language. It explains why it chose email over LinkedIn, why it sent at 10am, why it held back a draft. Smart colleague, not a machine.</p>
+    </div>
+    <div class="guide-card">
+      <div class="icon" style="background: var(--mint-soft); color: #065F46;">🌊</div>
+      <h4>Calm, Not Passive</h4>
+      <p>The product radiates quiet confidence. Things are happening — leads are being found, emails are being sent — but the interface never feels urgent or overwhelming. Calm control room energy.</p>
+    </div>
+    <div class="guide-card">
+      <div class="icon" style="background: var(--lavender-soft); color: #5B21B6;">🤝</div>
+      <h4>Companion, Not Tool</h4>
+      <p>Users don't "use" the product. They work alongside it. The AI asks questions, makes suggestions, admits uncertainty. It's a trusted partner in their outreach operation.</p>
+    </div>
+    <div class="guide-card">
+      <div class="icon" style="background: var(--amber-soft); color: #92400E;">🛡️</div>
+      <h4>Protective, Not Controlling</h4>
+      <p>The quality gate, the dedup check, the warmup pipeline — these are the AI protecting the user's brand, reputation, and deliverability. Never paternalistic. Always in the user's corner.</p>
+    </div>
+  </div>
+
+  <h3>Emotional Target</h3>
+  <p>When someone uses Outbound Octopus, they should feel like a founder who just hired their first great sales team. The dominant emotions are:</p>
+  <div class="emotion-scale">
+    <div class="emotion-bar" style="background: var(--ocean-700);">Trust</div>
+    <div class="emotion-bar" style="background: var(--ocean-600);">Relief</div>
+    <div class="emotion-bar" style="background: var(--ocean-500);">Confidence</div>
+    <div class="emotion-bar" style="background: var(--mint);">Pride</div>
+    <div class="emotion-bar" style="background: var(--lavender);">Curiosity</div>
+  </div>
+  <p style="font-size: 14px; color: var(--sand-400); margin-top: -8px;">← These should be evoked in roughly this proportion. Trust is the foundation. Curiosity is the delight.</p>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 2. COLOR SYSTEM -->
+<!-- ════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-number">02</div>
+  <h2>Color System</h2>
+  <p>The palette is built around ocean blues as the primary family, warm sand neutrals for calm readability, and carefully chosen accents that each serve a specific functional purpose. The overall feeling should be like looking out at a calm ocean — deep, trustworthy, and expansive.</p>
+  
+  <h3>Primary — Ocean Blue</h3>
+  <p>The primary color family. Used for interactive elements, the sidebar, key actions, and brand identity. The full spectrum allows depth and hierarchy without introducing new hues.</p>
+  <div class="palette-grid">
+    <div class="swatch"><div class="swatch-color" style="background: var(--ocean-900);"></div><div class="swatch-info"><div class="swatch-name">Ocean 900</div><div class="swatch-value">#0A1628</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: var(--ocean-800);"></div><div class="swatch-info"><div class="swatch-name">Ocean 800</div><div class="swatch-value">#0F2140</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: var(--ocean-700);"></div><div class="swatch-info"><div class="swatch-name">Ocean 700</div><div class="swatch-value">#142D58</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: var(--ocean-500);"></div><div class="swatch-info"><div class="swatch-name">Ocean 500</div><div class="swatch-value">#2563EB</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: var(--ocean-400);"></div><div class="swatch-info"><div class="swatch-name">Ocean 400</div><div class="swatch-value">#4A8AF4</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: var(--ocean-200);"></div><div class="swatch-info"><div class="swatch-name">Ocean 200</div><div class="swatch-value">#B8D4FF</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: var(--ocean-50);"></div><div class="swatch-info"><div class="swatch-name">Ocean 50</div><div class="swatch-value">#EFF6FF</div></div></div>
+  </div>
+  
+  <h3>Neutrals — Sand</h3>
+  <p>Warm neutrals instead of cold grays. This subtle warmth makes the interface feel approachable and reduces the clinical, dashboard-like feel that causes anxiety in non-technical users.</p>
+  <div class="palette-grid">
+    <div class="swatch"><div class="swatch-color" style="background: var(--sand-900);"></div><div class="swatch-info"><div class="swatch-name">Sand 900</div><div class="swatch-value">#1C1917</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: var(--sand-700);"></div><div class="swatch-info"><div class="swatch-name">Sand 700</div><div class="swatch-value">#44403C</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: var(--sand-500);"></div><div class="swatch-info"><div class="swatch-name">Sand 500</div><div class="swatch-value">#78716C</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: var(--sand-300);"></div><div class="swatch-info"><div class="swatch-name">Sand 300</div><div class="swatch-value">#D6D3D1</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: var(--sand-100); border: 1px solid var(--sand-200);"></div><div class="swatch-info"><div class="swatch-name">Sand 100</div><div class="swatch-value">#F5F5F4</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: var(--sand-50); border: 1px solid var(--sand-200);"></div><div class="swatch-info"><div class="swatch-name">Sand 50</div><div class="swatch-value">#FAFAF9</div></div></div>
+  </div>
+  
+  <h3>Functional Accents</h3>
+  <p>Each accent color has one job. Never used decoratively — only for their assigned meaning.</p>
+  <div class="palette-grid">
+    <div class="swatch"><div class="swatch-color" style="background: var(--mint);"></div><div class="swatch-info"><div class="swatch-name">Mint</div><div class="swatch-value">Success, healthy, active</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: var(--amber);"></div><div class="swatch-info"><div class="swatch-name">Amber</div><div class="swatch-value">Warming, in progress, caution</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: var(--coral);"></div><div class="swatch-info"><div class="swatch-name">Coral</div><div class="swatch-value">Needs attention, errors, escalation</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: var(--lavender);"></div><div class="swatch-info"><div class="swatch-name">Lavender</div><div class="swatch-value">Milestones, meetings, celebrations</div></div></div>
+  </div>
+  
+  <div class="callout principle">
+    <strong>Color Rule: Blue Acts, Green Confirms, Amber Waits, Coral Asks</strong>
+    <p>Ocean blue is for actions and interactive elements. Mint/green is for healthy states and success. Amber is for in-progress and warmup states. Coral is for things that need human attention — never for decoration.</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 3. TYPOGRAPHY -->
+<!-- ════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-number">03</div>
+  <h2>Typography</h2>
+  <p>Typography creates the emotional tone before anyone reads a word. The pairing of DM Serif Display (warm, trustworthy) with DM Sans (clean, modern) creates a feeling of sophisticated simplicity. JetBrains Mono is reserved for data, status codes, and technical details.</p>
+  
+  <div class="type-specimen">
+    <div class="label">Display — DM Serif Display</div>
+    <div style="font-family: var(--font-display); font-size: 42px; color: var(--ocean-900); line-height: 1.15; margin-bottom: 12px;">Your AI sales team is ready.</div>
+    <div style="font-size: 14px; color: var(--sand-400);">Used for: Page titles, section headings, onboarding headlines, celebration moments, the Command Center meeting count. Anywhere the product needs to feel warm and confident.</div>
+  </div>
+  
+  <div class="type-specimen">
+    <div class="label">Body — DM Sans</div>
+    <div style="font-family: var(--font-body); font-size: 16px; color: var(--sand-700); line-height: 1.7; margin-bottom: 12px;">Your AI is handling 47 conversations. 3 need your attention. Campaign A booked 2 meetings today — Sarah Chen at Acme confirmed for Thursday 2pm.</div>
+    <div style="font-size: 14px; color: var(--sand-400);">Used for: All body text, descriptions, chat messages, table content, notifications. Weights 300-700. The workhorse of the interface.</div>
+  </div>
+  
+  <div class="type-specimen">
+    <div class="label">Mono — JetBrains Mono</div>
+    <div style="font-family: var(--font-mono); font-size: 14px; color: var(--sand-600); line-height: 1.6; margin-bottom: 12px;">ICP Score: 87 &nbsp;|&nbsp; Sent: 10:14am EST &nbsp;|&nbsp; Opens: 3 &nbsp;|&nbsp; Reply: Positive</div>
+    <div style="font-size: 14px; color: var(--sand-400);">Used for: Data values, timestamps, scores, status labels, code snippets. Adds technical credibility without feeling cold.</div>
+  </div>
+  
+  <h3>Type Scale</h3>
+  <div class="token-grid">
+    <div class="token-label">Display Large</div><div class="token-value">36-42px / DM Serif Display / Page titles</div>
+    <div class="token-label">Display Small</div><div class="token-value">28-32px / DM Serif Display / Section headings</div>
+    <div class="token-label">Heading</div><div class="token-value">20px / DM Sans 600 / Card titles, tab labels</div>
+    <div class="token-label">Subheading</div><div class="token-value">16px / DM Sans 600 / Group labels, table headers</div>
+    <div class="token-label">Body</div><div class="token-value">15-16px / DM Sans 400 / Default text</div>
+    <div class="token-label">Body Small</div><div class="token-value">14px / DM Sans 400 / Secondary text, descriptions</div>
+    <div class="token-label">Caption</div><div class="token-value">13px / DM Sans 400 / Timestamps, metadata</div>
+    <div class="token-label">Label</div><div class="token-value">12-13px / JetBrains Mono 500 / Status, scores, data</div>
+    <div class="token-label">Overline</div><div class="token-value">11-12px / JetBrains Mono 500 / Section markers, uppercase labels</div>
+  </div>
+  
+  <div class="callout do">
+    <strong>Typography creates calm</strong>
+    <p>Generous line-height (1.6-1.7 for body text). Never stack headings without body text between them. One font weight change per line — never bold AND italic AND colored. Let whitespace do the talking.</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 4. SPACING & LAYOUT -->
+<!-- ════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-number">04</div>
+  <h2>Spacing & Layout</h2>
+  <p>Generous spacing is not wasted space — it's the primary tool for creating calm. Dense interfaces create anxiety. Breathing room creates confidence.</p>
+  
+  <h3>Spacing Scale</h3>
+  <div class="spacing-demo">
+    <div class="spacing-block"><div class="spacing-visual" style="height: 4px;"></div><div class="spacing-label">4px xs</div></div>
+    <div class="spacing-block"><div class="spacing-visual" style="height: 8px;"></div><div class="spacing-label">8px sm</div></div>
+    <div class="spacing-block"><div class="spacing-visual" style="height: 16px;"></div><div class="spacing-label">16px md</div></div>
+    <div class="spacing-block"><div class="spacing-visual" style="height: 24px;"></div><div class="spacing-label">24px lg</div></div>
+    <div class="spacing-block"><div class="spacing-visual" style="height: 32px;"></div><div class="spacing-label">32px xl</div></div>
+    <div class="spacing-block"><div class="spacing-visual" style="height: 48px;"></div><div class="spacing-label">48px 2xl</div></div>
+    <div class="spacing-block"><div class="spacing-visual" style="height: 64px;"></div><div class="spacing-label">64px 3xl</div></div>
+    <div class="spacing-block"><div class="spacing-visual" style="height: 96px;"></div><div class="spacing-label">96px 4xl</div></div>
+  </div>
+  
+  <h3>Layout Principles</h3>
+  <div class="token-grid">
+    <div class="token-label">Content Max Width</div><div class="token-value">1280px (main content area, not full bleed)</div>
+    <div class="token-label">Sidebar Width</div><div class="token-value">240px collapsed: 64px (icon only)</div>
+    <div class="token-label">Card Padding</div><div class="token-value">24px (comfortable reading distance)</div>
+    <div class="token-label">Table Row Height</div><div class="token-value">52px minimum (touch-friendly, scannable)</div>
+    <div class="token-label">Between Cards</div><div class="token-value">16-24px (md-lg)</div>
+    <div class="token-label">Section Gaps</div><div class="token-value">48-64px (2xl-3xl) — let sections breathe</div>
+    <div class="token-label">Page Top Margin</div><div class="token-value">32px below top bar</div>
+  </div>
+  
+  <div class="callout principle">
+    <strong>The Breathing Rule</strong>
+    <p>When in doubt, add more space. A screen that feels "too empty" is better than one that feels "too busy." Users with outbound anxiety need visual calm. Dense dashboards are the enemy of trust. If content feels cramped, increase spacing before reducing font size.</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 5. SHADOWS, BORDERS, RADIUS -->
+<!-- ════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-number">05</div>
+  <h2>Depth & Surface</h2>
+  <p>Subtle depth creates hierarchy without visual noise. The product uses soft, warm shadows — never harsh black drop-shadows. Borders are used sparingly and only for separation, never decoration.</p>
+  
+  <h3>Shadow Scale</h3>
+  <div class="token-grid">
+    <div class="token-label">XS (table rows, inputs)</div><div class="token-value">0 1px 2px rgba(10,22,40, 0.04)</div>
+    <div class="token-label">SM (cards, resting)</div><div class="token-value">0 2px 8px rgba(10,22,40, 0.06)</div>
+    <div class="token-label">MD (cards, hover)</div><div class="token-value">0 4px 16px rgba(10,22,40, 0.08)</div>
+    <div class="token-label">LG (modals, popovers)</div><div class="token-value">0 8px 32px rgba(10,22,40, 0.10)</div>
+    <div class="token-label">Glow (focus, active)</div><div class="token-value">0 0 24px rgba(37,99,235, 0.15)</div>
+  </div>
+  
+  <h3>Border Radius</h3>
+  <div class="token-grid">
+    <div class="token-label">SM (inputs, small elements)</div><div class="token-value">6px</div>
+    <div class="token-label">MD (buttons, cards)</div><div class="token-value">10px</div>
+    <div class="token-label">LG (panels, modals)</div><div class="token-value">16px</div>
+    <div class="token-label">XL (chat bubbles, hero cards)</div><div class="token-value">24px</div>
+    <div class="token-label">Full (pills, avatars)</div><div class="token-value">9999px</div>
+  </div>
+  
+  <div class="callout do">
+    <strong>Rounded, Never Sharp</strong>
+    <p>Rounded corners signal friendliness and safety. Never use sharp corners (0px radius) in the product UI. Minimum radius is 6px. Chat bubbles and status pills use larger radii (16-24px) for warmth.</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 6. COMPONENTS: CHAT -->
+<!-- ════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-number">06</div>
+  <h2>Chat Experience</h2>
+  <p>Chat is the first thing users experience during onboarding and campaign creation. It must feel like talking to a smart, warm colleague — not a chatbot. Every detail contributes to the feeling of being in good hands.</p>
+  
+  <div class="preview-card">
+    <div class="preview-header">Chat — Campaign Creation</div>
+    <div class="preview-body">
+      <div class="chat-container">
+        <div class="chat-msg ai">
+          <div class="chat-avatar">🐙</div>
+          <div class="chat-bubble">Let's build a new campaign. Based on your product, I'd suggest targeting VP of Engineering at Series B-D startups with 50-200 employees. They're likely scaling their dev teams and feeling the pain of manual deployments. Want to go with this, or adjust?</div>
+        </div>
+        <div class="chat-msg user">
+          <div class="chat-avatar">JD</div>
+          <div class="chat-bubble">That sounds right, but focus on fintech specifically</div>
+        </div>
+        <div class="chat-msg ai">
+          <div class="chat-avatar">🐙</div>
+          <div class="chat-bubble">Perfect — fintech VPs of Engineering at Series B-D, 50-200 employees. Compliance overhead is usually a big pain point in fintech. Want me to lead with that angle, or do you have a specific message in mind?</div>
+        </div>
+        <div class="chat-msg ai" style="margin-bottom: 0;">
+          <div class="chat-avatar">🐙</div>
+          <div class="chat-typing"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <h3>Chat Design Rules</h3>
+  
+  <div class="do-dont-grid">
+    <div class="callout do">
+      <strong>Do</strong>
+      <p>AI avatar uses the octopus icon with a gradient background (Ocean → Mint). User avatar shows initials on sand background. AI bubbles are white with a subtle border. User bubbles are Ocean 500 (solid blue). Typing indicator uses gentle bouncing dots — never "AI is thinking..." text.</p>
+    </div>
+    <div class="callout dont">
+      <strong>Don't</strong>
+      <p>Never use a generic robot icon for AI. Never show "Loading..." or a spinner in chat — use typing dots. Never send more than 2 messages in a row without waiting for user input (prevents monologue feel). Never use markdown formatting in chat bubbles — keep them conversational.</p>
+    </div>
+  </div>
+  
+  <h3>Chat Micro-Interactions</h3>
+  <div class="token-grid">
+    <div class="token-label">Message appear</div><div class="token-value">Fade up + slide from bottom, 300ms ease-out. Stagger 100ms for consecutive AI messages.</div>
+    <div class="token-label">Typing indicator</div><div class="token-value">Appears after 400ms delay (feels like thinking, not instant). Dots bounce at 1.4s cycle.</div>
+    <div class="token-label">User message</div><div class="token-value">Slides up immediately (no artificial delay — user's words should feel instant).</div>
+    <div class="token-label">Suggestion chips</div><div class="token-value">Fade in below AI message, 200ms stagger per chip. Hover: lift + shadow-md.</div>
+    <div class="token-label">Inline preview</div><div class="token-value">When AI shows a sample email in chat, it appears in a subtle card (sand-50 bg, sand-200 border) within the conversation flow.</div>
+  </div>
+  
+  <h3>Chat Voice & Tone</h3>
+  <div class="token-grid">
+    <div class="token-label">First message</div><div class="token-value">Warm, direct, shows intelligence immediately. No "Hi! I'm your AI assistant." Start with value.</div>
+    <div class="token-label">Questions</div><div class="token-value">One question at a time. Never stack 3 questions in one message. Always offer a suggestion before asking.</div>
+    <div class="token-label">Confirmations</div><div class="token-value">Brief + forward-moving. "Perfect — fintech VPs it is. Now let me..." not "Great choice! I've noted that..."</div>
+    <div class="token-label">Uncertainty</div><div class="token-value">Honest: "I'm not sure about this one. Here are two options — which feels right?" Never fake confidence.</div>
+    <div class="token-label">Launch moment</div><div class="token-value">"Everything looks good. Launch this campaign?" — single clear CTA button inline in chat.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 7. ONBOARDING EXPERIENCE -->
+<!-- ════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-number">07</div>
+  <h2>Onboarding Experience</h2>
+  <p>Onboarding is the most critical moment. It sets the emotional tone for everything that follows. The user should feel: "I'm in good hands. This understands me."</p>
+  
+  <h3>Emotional Arc of Onboarding</h3>
+  <div class="emotion-scale">
+    <div class="emotion-bar" style="background: var(--ocean-400); font-size: 10px;">Welcome<br>Curiosity</div>
+    <div class="emotion-bar" style="background: var(--ocean-500); font-size: 10px;">Guided Choice<br>Confidence</div>
+    <div class="emotion-bar" style="background: var(--ocean-600); font-size: 10px;">AI Learning<br>Amazement</div>
+    <div class="emotion-bar" style="background: var(--mint); font-size: 10px;">Calibration<br>Ownership</div>
+    <div class="emotion-bar" style="background: var(--lavender); font-size: 10px;">Ready<br>Excitement</div>
+  </div>
+  
+  <h3>Screen-by-Screen Guidelines</h3>
+  
+  <h3 style="color: var(--ocean-500);">Welcome Screen</h3>
+  <div class="token-grid">
+    <div class="token-label">Layout</div><div class="token-value">Centered. Maximum 480px wide content. Ocean gradient background with subtle radial glow.</div>
+    <div class="token-label">Headline</div><div class="token-value">DM Serif Display, 36px. "Your AI sales team is ready." White text.</div>
+    <div class="token-label">Subtext</div><div class="token-value">DM Sans 300, 18px. "Teach them about your business once. Create unlimited campaigns in minutes." Ocean-200.</div>
+    <div class="token-label">CTA</div><div class="token-value">"Get Started" — white button on blue bg. Large (48px height). Centered.</div>
+    <div class="token-label">Progress</div><div class="token-value">Subtle step indicator (dots, not numbers). 5 steps shown. No "Step 1 of 5" text — too clinical.</div>
+    <div class="token-label">Animation</div><div class="token-value">Content fades in over 600ms. Background gradient subtly shifts (15s cycle, barely perceptible).</div>
+  </div>
+  
+  <h3 style="color: var(--ocean-500);">Guided Choice: "What Do You Have?"</h3>
+  <div class="token-grid">
+    <div class="token-label">Layout</div><div class="token-value">4 option cards in a 2x2 grid (single column on mobile). White bg. Generous padding (32px).</div>
+    <div class="token-label">Cards</div><div class="token-value">Each card: icon (40px, colored bg), title (16px bold), description (14px, sand-500). Hover: lift + shadow-md + ocean-50 border.</div>
+    <div class="token-label">Selection</div><div class="token-value">Multi-select with checkbox. Selected: ocean-50 bg, ocean-500 border, checkmark appears. Smooth 200ms transition.</div>
+    <div class="token-label">Headline</div><div class="token-value">"What do you have to get started?" — DM Serif Display, 28px, centered.</div>
+    <div class="token-label">Subtext</div><div class="token-value">"Pick whatever applies. More = smarter AI. You can always add more later." — sand-500, 15px.</div>
+    <div class="token-label">CTA</div><div class="token-value">"Continue" — appears after at least 1 selection. Disabled state: sand-300 bg, sand-400 text.</div>
+  </div>
+  
+  <h3 style="color: var(--ocean-500);">Domain Ingestion / AI Learning</h3>
+  <div class="token-grid">
+    <div class="token-label">Input</div><div class="token-value">Single URL field. Large (48px height). Auto-focus. Placeholder: "yourcompany.com". No "https://" required — system adds it.</div>
+    <div class="token-label">Live processing</div><div class="token-value">Below the input, a live feed of what the AI is discovering. Each item fades in: "✓ Found your homepage" → "✓ Extracting positioning" → "✓ Identifying tone". Ocean-500 checkmark, sand-600 text.</div>
+    <div class="token-label">Processing animation</div><div class="token-value">Subtle pulse on the input field border (ocean-300 glow). Feed items appear with 800ms stagger. This is a Labor Illusion moment — let it take 5-8 seconds even if processing is faster.</div>
+    <div class="token-label">Output</div><div class="token-value">Card with AI's summary. "Here's what I understand about your business:" followed by key points. "Sound right?" with Edit and Confirm buttons.</div>
+  </div>
+  
+  <div class="callout warning">
+    <strong>The AI Learning Moment is Sacred</strong>
+    <p>This is where users first see the AI's intelligence. Don't rush it. The live processing feed builds trust more than any marketing copy ever could. Each checkmark says: "I'm thorough. I'm understanding your business. You're in good hands." If the crawl finishes in 2 seconds, stretch the animation to 5-6 seconds.</p>
+  </div>
+  
+  <h3 style="color: var(--ocean-500);">Brand Voice Calibration</h3>
+  <div class="token-grid">
+    <div class="token-label">Sample emails</div><div class="token-value">3 cards side by side (stacked on mobile). Each shows a sample outreach email in a different tone. Cards have sand-50 bg, subtle border. Font matches actual email styling (14px DM Sans).</div>
+    <div class="token-label">Selection</div><div class="token-value">Click to select. Selected card: ocean-50 bg, ocean-500 border, subtle glow. "This sounds most like me" button below.</div>
+    <div class="token-label">Feedback</div><div class="token-value">After selection, option to refine: "Want to adjust anything?" with a text input. The AI regenerates based on feedback.</div>
+    <div class="token-label">Tone labels</div><div class="token-value">Each sample has a human tone label: "Direct & no-fluff", "Warm & conversational", "Professional & detailed". Never use jargon like "Formal B2B" or "Casual CTA-focused".</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 8. COMPONENT PATTERNS -->
+<!-- ════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-number">08</div>
+  <h2>Component Patterns</h2>
+  
+  <h3>Buttons</h3>
+  <div class="preview-card">
+    <div class="preview-header">Button Variants</div>
+    <div class="preview-body">
+      <div class="btn-row">
+        <button class="btn btn-primary">Launch Campaign</button>
+        <button class="btn btn-secondary">Edit Settings</button>
+        <button class="btn btn-ghost">View Details →</button>
+      </div>
+      <div class="btn-row" style="margin-top: 16px;">
+        <button class="btn btn-success">Approve & Send</button>
+        <button class="btn btn-danger">Remove Prospect</button>
+        <button class="btn btn-secondary" style="opacity: 0.5; cursor: not-allowed;">Waiting for warmup...</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="token-grid">
+    <div class="token-label">Primary</div><div class="token-value">Ocean-500 bg, white text. Used for THE main action on each screen. One primary button per view.</div>
+    <div class="token-label">Secondary</div><div class="token-value">White bg, ocean-700 text, sand-300 border. Supporting actions.</div>
+    <div class="token-label">Ghost</div><div class="token-value">Transparent bg, ocean-500 text. Tertiary actions, "View more" links.</div>
+    <div class="token-label">Success</div><div class="token-value">Mint bg, white text. Only for approving/confirming AI suggestions (not generic "Save").</div>
+    <div class="token-label">Danger</div><div class="token-value">White bg, coral text, sand-300 border. Destructive actions. Never red background — too alarming for a calm product.</div>
+    <div class="token-label">Disabled</div><div class="token-value">50% opacity + not-allowed cursor. Always include tooltip explaining WHY disabled: "Waiting for warmup to complete".</div>
+    <div class="token-label">Hover</div><div class="token-value">translateY(-1px) + increased shadow. 250ms ease-out. Feels like lifting, not pushing.</div>
+    <div class="token-label">Button text</div><div class="token-value">Always verb-first. "Launch Campaign" not "Campaign Launch". "Approve & Send" not "Submit". "Remove Prospect" not "Delete".</div>
+  </div>
+  
+  <h3>Status Indicators</h3>
+  <div class="preview-card">
+    <div class="preview-header">Status Pills — Prospect Table & Campaign Cards</div>
+    <div class="preview-body">
+      <div class="status-row">
+        <span class="status-pill active">Active</span>
+        <span class="status-pill warming">Warming Up</span>
+        <span class="status-pill paused">Paused</span>
+        <span class="status-pill escalated">Needs Attention</span>
+        <span class="status-pill meeting">Meeting Booked</span>
+      </div>
+    </div>
+  </div>
+  <p>Status pills use the functional accent colors exclusively. The "Warming Up" state has an animated pulsing dot to convey ongoing activity. "Needs Attention" uses coral — the only color that demands action.</p>
+
+  <h3>Notifications</h3>
+  <div class="preview-card">
+    <div class="preview-header">In-App Notification Patterns</div>
+    <div class="preview-body">
+      <div class="notif">
+        <div class="notif-icon celebration">🎉</div>
+        <div>
+          <div class="notif-title">Meeting booked with Sarah Chen</div>
+          <div class="notif-body">Thursday 2pm — prep brief ready</div>
+          <div class="notif-time">2 minutes ago</div>
+        </div>
+      </div>
+      <div class="notif">
+        <div class="notif-icon alert">⚡</div>
+        <div>
+          <div class="notif-title">2 more mailboxes ready</div>
+          <div class="notif-body">Capacity increased from 30 to 60 leads/day</div>
+          <div class="notif-time">1 hour ago</div>
+        </div>
+      </div>
+      <div class="notif">
+        <div class="notif-icon escalation">💬</div>
+        <div>
+          <div class="notif-title">Complex reply from John at TechCorp</div>
+          <div class="notif-body">Competitor objection — 3 suggested responses ready</div>
+          <div class="notif-time">15 minutes ago</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="token-grid">
+    <div class="token-label">Celebrations</div><div class="token-value">Lavender icon bg. Warm, brief. "Meeting booked with Sarah Chen" — name makes it real.</div>
+    <div class="token-label">Progress</div><div class="token-value">Amber/ocean icon bg. Infrastructure milestones. Always include what changed for the user.</div>
+    <div class="token-label">Escalations</div><div class="token-value">Coral icon bg. Clear what's needed. "3 suggested responses ready" — reduce anxiety by showing AI already did work.</div>
+    <div class="token-label">Never</div><div class="token-value">Never use "WARNING", "ALERT", "CRITICAL" in notification copy. Say what happened. Not how urgent it is.</div>
+  </div>
+  
+  <h3>Progress Bars (Warmup Pipeline)</h3>
+  <div class="preview-card">
+    <div class="preview-header">Warmup Progress</div>
+    <div class="preview-body">
+      <div style="margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+          <span style="font-size: 14px; font-weight: 500;">mailbox-1@outreach.acme.com</span>
+          <span style="font-family: var(--font-mono); font-size: 13px; color: var(--mint);">Ready</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill healthy" style="width: 100%;"></div></div>
+      </div>
+      <div style="margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+          <span style="font-size: 14px; font-weight: 500;">mailbox-2@outreach.acme.com</span>
+          <span style="font-family: var(--font-mono); font-size: 13px; color: var(--amber);">Day 9 of 15</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill warming" style="width: 60%;"></div></div>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+          <span style="font-size: 14px; font-weight: 500;">mailbox-3@outreach.acme.com</span>
+          <span style="font-family: var(--font-mono); font-size: 13px; color: var(--amber);">Day 3 of 15</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill warming" style="width: 20%;"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 9. MOTION & ANIMATION -->
+<!-- ════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-number">09</div>
+  <h2>Motion & Animation</h2>
+  <p>Motion in Outbound Octopus serves one purpose: making the AI feel alive and responsive. Never decorative. Every animation either shows progress, confirms an action, or guides attention.</p>
+  
+  <h3>Animation Principles</h3>
+  <div class="card-grid">
+    <div class="guide-card">
+      <h4>Gentle, Never Jarring</h4>
+      <p>All transitions use ease-out curves. Nothing bounces aggressively. The product should feel like it's breathing, not jumping. Maximum displacement: 8px translate. Maximum scale: 1.02.</p>
+    </div>
+    <div class="guide-card">
+      <h4>AI Activity Feels Alive</h4>
+      <p>The prospect table, timeline entries, and warmup pipeline should feel like they're gently updating — new rows fade in, status changes transition smoothly, numbers count up instead of snapping.</p>
+    </div>
+    <div class="guide-card">
+      <h4>Celebrations Are Earned</h4>
+      <p>The first meeting booked gets a confetti moment (subtle, 2-second, particle-based). Subsequent meetings get a satisfying green pulse. 10th meeting gets a milestone card with a gentle scale-up entrance.</p>
+    </div>
+  </div>
+  
+  <h3>Timing Tokens</h3>
+  <div class="token-grid">
+    <div class="token-label">Fast (150ms)</div><div class="token-value">Hover states, focus rings, tooltip show/hide. Instant-feeling responsiveness.</div>
+    <div class="token-label">Normal (250ms)</div><div class="token-value">Button state changes, card hover lifts, tab switches, dropdown open. Smooth but not slow.</div>
+    <div class="token-label">Slow (400ms)</div><div class="token-value">Page transitions, panel slide-ins, modal entrances. Deliberate and calm.</div>
+    <div class="token-label">Entrance (600ms)</div><div class="token-value">First-load content, onboarding screens, major state changes. Sets the mood.</div>
+    <div class="token-label">Stagger (80-120ms)</div><div class="token-value">Between consecutive items (list items, timeline entries, chat messages). Creates rhythm.</div>
+  </div>
+  
+  <h3>Easing Curves</h3>
+  <div class="token-grid">
+    <div class="token-label">ease-out</div><div class="token-value">cubic-bezier(0.16, 1, 0.3, 1) — Default for everything. Fast start, gentle landing.</div>
+    <div class="token-label">ease-spring</div><div class="token-value">cubic-bezier(0.34, 1.56, 0.64, 1) — Only for celebration moments. Subtle overshoot.</div>
+  </div>
+  
+  <div class="callout dont">
+    <strong>Never</strong>
+    <p>Never use bounce animations for errors or warnings. Never spin or rotate UI elements (spinners excepted). Never animate the prospect table on every data refresh — only on meaningful state changes. Never use animations longer than 800ms for any single element. Never use ease-in (things that accelerate away feel unresolved).</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 10. WRITING GUIDELINES -->
+<!-- ════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-number">10</div>
+  <h2>Writing & Copy Guidelines</h2>
+  <p>The AI speaks as one voice. It's warm, direct, and confident without being arrogant. It uses "I" when referring to itself and "you" when addressing the user. It never uses corporate jargon, marketing speak, or technical terms without explanation.</p>
+  
+  <h3>Voice Attributes</h3>
+  <div class="token-grid">
+    <div class="token-label">Warm, not cute</div><div class="token-value">"Let's build a new campaign" not "Ready to rock and roll? 🎸"</div>
+    <div class="token-label">Direct, not terse</div><div class="token-value">"Reply rates are lower this week. I'm testing new subject lines." not "Low engagement detected."</div>
+    <div class="token-label">Honest, not hedging</div><div class="token-value">"I'm not confident about this reply. Here are options." not "Results may vary based on..."</div>
+    <div class="token-label">Specific, not vague</div><div class="token-value">"Sarah Chen at Acme replied positively" not "1 new positive reply received"</div>
+    <div class="token-label">Calm, not alarming</div><div class="token-value">"Bounce rates are up — I've paused this account to investigate." not "⚠️ DELIVERABILITY CRISIS"</div>
+  </div>
+  
+  <h3>Copy Patterns by Context</h3>
+  
+  <div class="do-dont-grid">
+    <div class="callout do">
+      <strong>Celebrations</strong>
+      <p>"Your first meeting! Sarah Chen, Thursday 2pm." Keep it brief and specific. The prospect's name makes it real. One exclamation mark maximum per celebration.</p>
+    </div>
+    <div class="callout do">
+      <strong>Escalations</strong>
+      <p>"Complex reply from John — he's asking about pricing. I've drafted 3 responses based on your pricing docs. Pick one or write your own." Show the work done. Reduce effort.</p>
+    </div>
+  </div>
+  <div class="do-dont-grid">
+    <div class="callout do">
+      <strong>Quality Gate</strong>
+      <p>"I held this back — the personalization might feel forced. Here's a rewrite that references their recent product launch instead." Protective, not critical.</p>
+    </div>
+    <div class="callout do">
+      <strong>Warmup Progress</strong>
+      <p>"Mailbox 2 is 60% warmed up — 6 more days. Your active campaigns are running on your ready mailboxes." Always reassure that current work isn't affected.</p>
+    </div>
+  </div>
+  
+  <div class="do-dont-grid">
+    <div class="callout dont">
+      <strong>Never Say</strong>
+      <p>"Oops!", "Something went wrong", "Error 500", "Invalid input", "Please try again later", "Your request has been submitted", "Thank you for your patience", "AI-powered", "Leverage", "Synergy", "Utilize".</p>
+    </div>
+    <div class="callout dont">
+      <strong>Never Do</strong>
+      <p>Don't stack exclamation marks. Don't use emoji in error states. Don't write paragraphs in notifications — max 2 sentences. Don't explain what the user already knows. Don't say "Are you sure?" — offer undo instead.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 11. PROSPECT TABLE GUIDELINES -->
+<!-- ════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-number">11</div>
+  <h2>Prospect Table Design</h2>
+  <p>The prospect table is the operational center. It must balance information density with visual calm. Users scan this table daily — it should be scannable in 3 seconds and deep-diveable when needed.</p>
+  
+  <h3>Table Visual Rules</h3>
+  <div class="token-grid">
+    <div class="token-label">Row height</div><div class="token-value">52px minimum. Comfortable touch targets and visual breathing room.</div>
+    <div class="token-label">Row hover</div><div class="token-value">sand-50 background + shadow-xs. Subtle lift feeling. 150ms transition.</div>
+    <div class="token-label">Row borders</div><div class="token-value">1px sand-200 bottom border only. No vertical borders. No grid lines.</div>
+    <div class="token-label">Header</div><div class="token-value">Sticky. sand-100 bg. 13px DM Sans 600. sand-600 text. uppercase letterspacing 0.5px.</div>
+    <div class="token-label">Group headers</div><div class="token-value">Ocean-50 bg with ocean-500 left accent (3px). Clickable to collapse. Chevron rotates on toggle.</div>
+    <div class="token-label">Collapsed group</div><div class="token-value">Shows single summary column with micro-indicator (heat-map dot or aggregate stat). Smooth height transition 300ms.</div>
+    <div class="token-label">Selected rows</div><div class="token-value">Ocean-50 bg. Blue checkbox. Selection count shown in floating action bar at bottom.</div>
+    <div class="token-label">Row expansion</div><div class="token-value">Slides open below the row, 400ms ease-out. White bg with sand-100 top border. Max height 400px with scroll.</div>
+  </div>
+  
+  <div class="callout principle">
+    <strong>The 3-Second Scan Rule</strong>
+    <p>A user should glance at the table for 3 seconds and know: how many prospects are active, who has replied, who needs attention, and whether things are generally healthy. Status pills, sentiment dots, and channel icons carry this load — not text.</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 12. EMOTIONAL DESIGN PATTERNS -->
+<!-- ════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-number">12</div>
+  <h2>Emotional Design Patterns</h2>
+  
+  <h3>The Calm State (Default)</h3>
+  <p>Most of the time, everything is running smoothly. The default state should communicate "all is well" through visual calm — muted colors, gentle activity indicators, healthy status pills. No blinking, no urgency, no dashboard anxiety.</p>
+  <div class="token-grid">
+    <div class="token-label">Background</div><div class="token-value">sand-50 page bg. White cards. No gradients in the main UI (save those for onboarding/celebrations).</div>
+    <div class="token-label">Activity indicators</div><div class="token-value">Subtle pulse on active campaign cards (ocean-100 border pulse, 4s cycle). Barely perceptible.</div>
+    <div class="token-label">Numbers</div><div class="token-value">Meetings booked counter uses DM Serif Display at 36-42px. It should feel like a quiet trophy, not a screaming metric.</div>
+  </div>
+  
+  <h3>The Attention State (Something Needs You)</h3>
+  <p>When the AI needs human input, the interface shifts gently — never alarmingly.</p>
+  <div class="token-grid">
+    <div class="token-label">Escalation badge</div><div class="token-value">Coral dot with white number. Appears on bell icon + campaign card. No animation — static presence is enough.</div>
+    <div class="token-label">Conversation highlight</div><div class="token-value">Coral-soft left border (3px) on conversations needing attention. Not full background change.</div>
+    <div class="token-label">Tone</div><div class="token-value">Copy stays calm: "3 conversations need your input" not "3 URGENT items require immediate action".</div>
+  </div>
+  
+  <h3>The Celebration State (Something Went Right)</h3>
+  <div class="token-grid">
+    <div class="token-label">First meeting ever</div><div class="token-value">Confetti particles (lavender + mint + ocean-200). 2-second burst. Card appears with meeting details + DM Serif headline.</div>
+    <div class="token-label">Subsequent meetings</div><div class="token-value">Green pulse on the meetings counter. Notification with prospect name. No confetti — celebration fatigue is real.</div>
+    <div class="token-label">Milestones (10th, 25th, 50th)</div><div class="token-value">Special card with DM Serif headline, lavender accent, subtle scale-up entrance. "10 meetings booked. Your AI is delivering."</div>
+    <div class="token-label">Brain 100%</div><div class="token-value">Brain health bar fills to green. Completion card: "Your AI is fully equipped." Mint accent.</div>
+  </div>
+  
+  <div class="callout principle">
+    <strong>Celebration Budget</strong>
+    <p>Treat celebrations like a budget. You have limited "celebration credits" per session. One confetti moment per user lifetime (first meeting). After that, celebrations get progressively more subtle. A small green pulse on a counter is more emotionally effective than repeated confetti. Over-celebrating devalues the moments that matter.</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- 13. ACCESSIBILITY & PERFORMANCE -->
+<!-- ════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-number">13</div>
+  <h2>Accessibility & Performance</h2>
+  
+  <h3>Accessibility</h3>
+  <div class="token-grid">
+    <div class="token-label">Color contrast</div><div class="token-value">All text meets WCAG 2.1 AA minimum. Body text (sand-600 on white) = 5.7:1 ratio. All interactive elements: 4.5:1 minimum.</div>
+    <div class="token-label">Focus states</div><div class="token-value">Ocean-500 focus ring (2px outline, 2px offset). Visible on all interactive elements. Never remove outlines.</div>
+    <div class="token-label">Status indicators</div><div class="token-value">Never rely on color alone. Status pills include text labels. Sentiment dots have tooltips. Progress bars show percentage text.</div>
+    <div class="token-label">Keyboard nav</div><div class="token-value">Full keyboard navigation for prospect table, conversations, and escalation actions. Tab order follows visual hierarchy.</div>
+    <div class="token-label">Motion</div><div class="token-value">Respect prefers-reduced-motion. Disable all non-essential animations. Keep functional transitions (panel open/close) but remove decorative ones.</div>
+  </div>
+  
+  <h3>Performance Feel</h3>
+  <div class="token-grid">
+    <div class="token-label">Perceived speed</div><div class="token-value">Optimistic UI: actions feel instant. Show the result immediately, sync in background. "Approve" clicks should update the UI in < 100ms.</div>
+    <div class="token-label">Loading states</div><div class="token-value">Skeleton screens for tables and cards. Never empty white space. Never spinners for actions that take < 2 seconds.</div>
+    <div class="token-label">Progressive loading</div><div class="token-value">Prospect table loads first 25 rows instantly. Remainder loads on scroll. Header and filters always visible.</div>
+    <div class="token-label">Real-time updates</div><div class="token-value">New table rows slide in gently (300ms). Status changes transition (pill color, text). Numbers count up, not snap.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- CLOSING -->
+<!-- ════════════════════════════════════════════ -->
+<div class="section" style="text-align: center; padding: var(--space-4xl) 0;">
+  <p style="font-family: var(--font-display); font-size: 28px; color: var(--ocean-900); max-width: none; margin-bottom: var(--space-md);">Build with calm confidence.</p>
+  <p style="color: var(--sand-400); font-size: 15px; max-width: none;">Outbound Octopus Brand & Experience Guidelines — v1.0 — March 2026</p>
+</div>
+
+</div>
+</body>
+</html>

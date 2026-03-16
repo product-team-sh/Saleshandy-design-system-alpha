@@ -1,0 +1,42 @@
+import { Context } from '@/types/context';
+
+export const mockContexts: Context[] = [
+  {
+    id: 'ctx-saleshandy',
+    name: 'Saleshandy',
+    accentColor: '#1d4ed8',
+    accentHover: '#1e40af',
+    accentPressed: '#1e3a8a',
+    logoUrl: '/logos/saleshandy.svg',
+    description: 'Main SalesHandy product workspace',
+    createdAt: '2025-11-01T00:00:00Z',
+    memberCount: 8,
+    campaignCount: 5,
+    prospectCount: 245,
+  },
+  {
+    id: 'ctx-trulyinbox',
+    name: 'Trulyinbox',
+    accentColor: '#7c3aed',
+    accentHover: '#6d28d9',
+    accentPressed: '#5b21b6',
+    logoUrl: '/logos/trulyinbox.svg',
+    description: 'Email warmup & deliverability — targeting cold email agencies and email infra buyers',
+    createdAt: '2026-01-15T00:00:00Z',
+    memberCount: 3,
+    campaignCount: 2,
+    prospectCount: 89,
+  },
+  {
+    id: 'ctx-acme',
+    name: 'Acme Corp',
+    accentColor: '#059669',
+    accentHover: '#047857',
+    accentPressed: '#065f46',
+    description: 'White-label workspace — new client, just getting started',
+    createdAt: '2026-02-28T00:00:00Z',
+    memberCount: 1,
+    campaignCount: 1,
+    prospectCount: 0,
+  },
+];

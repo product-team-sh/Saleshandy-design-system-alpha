@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-outfit: 'Outfit', system-ui, sans-serif;
+  --font-jakarta: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-dm-sans: 'DM Sans', -apple-system, sans-serif;
+  --font-dm-serif: 'DM Serif Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --ocean-900: #0A1628;
+  --ocean-800: #0F2140;
+  --ocean-700: #142D58;
+  --ocean-600: #1A3A6E;
+  --ocean-500: #2563EB;
+  --ocean-400: #4A8AF4;
+  --ocean-200: #B8D4FF;
+  --ocean-100: #DBEAFE;
+  --ocean-50: #EFF6FF;
+
+  --sand-50: #FAFAF9;
+  --sand-100: #F5F5F4;
+  --sand-200: #E7E5E4;
+  --sand-300: #D6D3D1;
+  --sand-400: #A8A29E;
+  --sand-500: #78716C;
+  --sand-600: #57534E;
+  --sand-700: #44403C;
+  --sand-800: #292524;
+
+  --mint: #3CCBA0;
+  --coral: #F97066;
+  --amber: #F59E0B;
+  --lavender: #8B5CF6;
+  --lavender-soft: #EDE9FE;
+  --lavender-dark: #5B21B6;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ─── Base ─── */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+#__next { height: 100%; }
+
+/* ─── AI Typing Dots ─── */
+@keyframes typing-dot {
+  0%, 60%, 100% { opacity: 0.25; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-4px); }
+}
+
+/* ─── Gentle Float (octopus logo) ─── */
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* ─── Ocean Pulse (active campaign dot) ─── */
+@keyframes ocean-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(60, 203, 160, 0.4); }
+  50% { opacity: 0.8; box-shadow: 0 0 0 4px rgba(60, 203, 160, 0); }
+}
+
+/* ─── Status Dot Pulse ─── */
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+/* ─── Glow (AI thinking send button) ─── */
+@keyframes ai-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+  50% { box-shadow: 0 0 16px 4px rgba(139, 92, 246, 0.2); }
+}
+
+/* ─── Send Glow ─── */
+@keyframes send-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(37, 99, 235, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.5); }
+}
+
+/* ─── Skeleton Shimmer ─── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ─── Message Appear ─── */
+@keyframes message-appear {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Panel Slide In ─── */
+@keyframes panel-slide-in {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* ─── Fade Up ─── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Scale In (celebrations) ─── */
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ─── Gradient Shift (onboarding bg) ─── */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─── Utility Classes ─── */
+.animate-typing-dot { animation: typing-dot 1.4s ease-in-out infinite; }
+.animate-typing-dot-2 { animation: typing-dot 1.4s ease-in-out 0.2s infinite; }
+.animate-typing-dot-3 { animation: typing-dot 1.4s ease-in-out 0.4s infinite; }
+.animate-gentle-float { animation: gentle-float 6s ease-in-out infinite; }
+.animate-ocean-pulse { animation: ocean-pulse 3s ease-in-out infinite; }
+.animate-status-pulse { animation: status-pulse 2.5s ease-in-out infinite; }
+.animate-ai-glow { animation: ai-glow 2s ease-in-out infinite; }
+.animate-send-glow { animation: send-glow 1.5s ease-in-out infinite; }
+.animate-message { animation: message-appear 300ms var(--ease-out); }
+.animate-panel-slide { animation: panel-slide-in 350ms var(--ease-out); }
+.animate-fade-up { animation: fade-up 400ms var(--ease-out); }
+.animate-scale-in { animation: scale-in 300ms var(--ease-spring); }
+
+.animate-shimmer {
+  background: linear-gradient(90deg, var(--sand-100) 25%, rgba(255,255,255,0.6) 50%, var(--sand-100) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* ─── Onboarding gradient ─── */
+.bg-ocean-gradient {
+  background: linear-gradient(160deg, var(--ocean-900) 0%, var(--ocean-700) 40%, var(--ocean-500) 100%);
+}
+
+/* ─── Font utilities ─── */
+.font-serif { font-family: var(--font-dm-serif); }
+.font-mono { font-family: var(--font-mono); }
+
+
+/* ─── Wiggle (playful hover) ─── */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+/* ─── Pop In (bouncy entrance) ─── */
+@keyframes pop-in {
+  0% { opacity: 0; transform: scale(0.85) translateY(6px); }
+  70% { opacity: 1; transform: scale(1.04) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ─── Dot grid background ─── */
+.bg-dots {
+  background-image: radial-gradient(circle, #CBD5E1 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* ─── Pop shadow hover states ─── */
+.shadow-pop-hover {
+  box-shadow: 6px 6px 0px 0px #1E293B;
+  transform: translate(-2px, -2px);
+}
+.shadow-pop-active {
+  box-shadow: 2px 2px 0px 0px #1E293B;
+  transform: translate(2px, 2px);
+}
+
+/* ─── Playful Geometric animation utilities ─── */
+.animate-wiggle { animation: wiggle 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.animate-pop-in { animation: pop-in 400ms cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+
+/* ─── Font utilities ─── */
+.font-display { font-family: var(--font-outfit, 'Outfit', system-ui, sans-serif); }
+
+/* ─── Respect reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
